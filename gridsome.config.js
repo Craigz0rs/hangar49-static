@@ -14,7 +14,13 @@ module.exports = {
         apiBase: 'wp-json',
         typeName: 'WordPress',
         perPage: 100,
-        concurrent: 10
+        concurrent: 10,
+        customEndpoints: [
+          // {
+          //   typeName: "clients",
+          //   route: 'markers/v1/client',
+          // }
+        ]
       }
     }
   ]
