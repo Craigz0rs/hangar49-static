@@ -1,26 +1,23 @@
 <template>
   <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-<!-- 
-    <p>{{$page.fields.acf.siteIntro}}</p> -->
-    <!-- <div v-for="field in stuff">
-      <h1> {{ field.headline }} </h1>
-      <h2> {{ field.introText }} </h2>
-    </div> -->
-
-      <h3> {{headline}} </h3>
-      <h4> {{introText}} </h4>
-      <!-- <p>{{stuff}}</p> -->
-
-
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+    <div class="home__wrapper">
+      <section class="home__hero">
+        <div class="content__wrapper">
+          <div class="home__intro">
+            <h1 class="home__title">Hangar 49<br><span>Warbirds</span></h1>
+            <h2 class="home__headline" v-html="$page.fields.acf.headline"></h2>
+            <p class="home__blurb" v-html="$page.fields.acf.introText"></p>
+          </div>
+        </div>
+      </section>
+      <section class="home__services info-bar">
+        <div class="content-wrapper">
+          <ul class="home__services-list">
+            
+          </ul>
+        </div>
+      </section>
+    </div>
   </Layout>
 </template>
 
@@ -28,10 +25,8 @@
 query {
   fields: wordPressPage(id: "13") {
     acf {
-      siteIntro {
-        headline
-        introText
-      }
+      headline
+      introText
     }
   } 
 }
@@ -44,31 +39,22 @@ export default {
   },
   data() {
     return {
-      stuff: null,
-      headline: null,
-      introText: null
-    }
-  },
-  computed: {
-    acf() {
-      this.headline = "blah"
-      for (let field in this.stuff) {
-         return this.headline = field.headline
-        // this.introText = field.introText
-      }
+      // stuff: null,
+      // headline: null,
+      // introText: null
     }
   },
   created() {
-    // console.log(this.$page.fields.acf.siteIntro);
-    this.stuff = this.$page.fields.acf.siteIntro;
-    // this.acf
-      for(let field in this.$page.fields.acf.siteIntro) {
-        console.log(typeof(field));
-        this.headline = this.$page.fields.acf.siteIntro[0].headline;
-        this.introText = this.$page.fields.acf.siteIntro[0].introText;
-      }
-    }
+    // this.stuff = this.$page.fields.acf.siteIntro;
+    // console.log(this.stuff)
+    // let i = 0;
+    // while ( i < this.stuff.length) {
+    //   this.headline = this.stuff[i].headline;
+    //   this.introText = this.stuff[i].introText;
+    //   i ++
+    // }
   }
+}
 
 </script>
 
