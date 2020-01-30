@@ -16,10 +16,22 @@ module.exports = {
         perPage: 100,
         concurrent: 10,
         customEndpoints: [
-          // {
-          //   typeName: "clients",
-          //   route: 'markers/v1/client',
-          // }
+          {
+            typeName: "testimonial",
+            route: 'markers/v1/testimonial',
+          },
+          {
+            typeName: "aircraft",
+            route: 'markers/v1/aircraft',
+          },
+          {
+            typeName: "inventory",
+            route: 'markers/v1/inventory',
+          },
+          {
+            typeName: "projects",
+            route: 'markers/v1/projects',
+          }
         ]
       }
     }

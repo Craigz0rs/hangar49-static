@@ -31,6 +31,19 @@
           </ul>
         </div>
       </section>
+      <section class="home__latest-inventory">
+        <div class="content-wrapper">
+          <div class="home__latest-inventory-wrapper">
+            <h2 class="detail_section_title">Newest Inventory</h2>
+            <article class="list-item">
+              <div class="list-item__image-wrap">
+                <img class="list-item__image" src="" alt="" />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+                            
     </div>
   </Layout>
 </template>
@@ -45,6 +58,35 @@ query {
         sellingFeatureIcon,
         sellingFeatureTitle,
         sellingFeatureInfo
+      }
+    }
+  }
+    allInventory {
+    edges {
+      node {     
+        acf {
+          featured_image {
+            url
+            alt
+          }
+          coming_soon
+          price_reduced
+          inventory_aircraft {
+            ID 
+          }         
+        } 
+      }
+    }
+  }
+  allAircraft {
+    edges {
+      node {
+        ID
+        acf {
+          manufacture_year
+          manufacturer
+          model
+        }
       }
     }
   } 
