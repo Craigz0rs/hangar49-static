@@ -12,8 +12,22 @@
       </section>
       <section class="home__services info-bar">
         <div class="content-wrapper">
-          <ul class="home__services-list">
-            
+          <ul class="home__services-list feature__list">
+            <li v-for="feature in $page.fields.acf.sellingFeatures"
+                class="home__services-item feature__item">
+                <div 
+                  v-html="feature.sellingFeatureIcon"
+                  class="feature__icon">
+                </div>
+                <h2 
+                  v-html="feature.sellingFeatureTitle"
+                  class="feature__title">
+                </h2>
+                <p 
+                  v-html="feature.sellingFeatureInfo"
+                  class="feature__text">
+                </p>
+            </li>
           </ul>
         </div>
       </section>
@@ -27,6 +41,11 @@ query {
     acf {
       headline
       introText
+      sellingFeatures {
+        sellingFeatureIcon,
+        sellingFeatureTitle,
+        sellingFeatureInfo
+      }
     }
   } 
 }
