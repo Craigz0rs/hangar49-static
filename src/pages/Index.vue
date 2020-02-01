@@ -35,15 +35,16 @@
         <div class="content-wrapper">
           <div class="home__latest-inventory-wrapper">
             <h2 class="detail_section_title">Newest Inventory</h2>
-            <article class="list-item">
-              <div class="list-item__image-wrap">
-                <img class="list-item__image" src="" alt="" />
+            <article class="list-item" v-for="edge in $page.posts.edges" :key="edge.node.id">
+              <h1>{{edge.node.title}}</h1>
+              <g-link :to="edge.node.path">{{edge.node.path}}</g-link>
+              <div v-if="edge.node.featuredMedia">
+                <g-image :src="edge.node.featuredMedia.sourceUrl" blur="40"/>
               </div>
             </article>
           </div>
         </div>
-      </section>
-                            
+      </section>              
     </div>
   </Layout>
 </template>
@@ -60,36 +61,25 @@ query {
         sellingFeatureInfo
       }
     }
-  }
-    allInventory {
-    edges {
-      node {     
-        acf {
-          featured_image {
-            url
-            alt
-          }
-          coming_soon
-          price_reduced
-          inventory_aircraft {
-            ID 
-          }         
-        } 
-      }
-    }
-  }
-  allAircraft {
+  } 
+  posts: allWordPressPost {
     edges {
       node {
-        ID
-        acf {
-          manufacture_year
-          manufacturer
-          model
+        path
+        slug
+        title
+        date
+        id
+        excerpt
+        featuredMedia {
+          sourceUrl
+          altText
+          id
+
         }
       }
     }
-  } 
+  }
 }
 </page-query>
 
@@ -104,6 +94,16 @@ export default {
       // headline: null,
       // introText: null
     }
+  },
+  methods: {
+    blah(image) {
+      if(image) {
+
+        return image.sourceUrl;
+      } else {
+        return ""
+      }
+  }
   },
   created() {
     // this.stuff = this.$page.fields.acf.siteIntro;

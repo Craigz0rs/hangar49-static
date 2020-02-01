@@ -18,22 +18,32 @@ module.exports = {
         customEndpoints: [
           {
             typeName: "testimonial",
-            route: 'markers/v1/testimonial',
+            route: 'markers/v1/testimonial'
           },
           {
             typeName: "aircraft",
-            route: 'markers/v1/aircraft',
+            route: 'markers/v1/aircraft'
           },
           {
             typeName: "inventory",
-            route: 'markers/v1/inventory',
+            route: 'markers/v1/inventory'
           },
           {
             typeName: "projects",
-            route: 'markers/v1/projects',
+            route: 'markers/v1/projects'
           }
         ]
       }
     }
-  ]
+  ],
+  templates: {
+    WordPressPost: [
+      {
+        path: (node) => {
+          return `/news/${node.slug}`
+        },
+        component: './src/templates/WordPressPost.vue'
+      }
+    ]
+  }
 }
