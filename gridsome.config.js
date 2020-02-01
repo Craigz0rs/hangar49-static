@@ -18,7 +18,7 @@ module.exports = {
         customEndpoints: [
           {
             typeName: "testimonial",
-            route: 'markers/v1/testimonial'
+            route: 'markers/v1/testimonial',
           },
           {
             typeName: "aircraft",
@@ -43,6 +43,15 @@ module.exports = {
           return `/news/${node.slug}`
         },
         component: './src/templates/WordPressPost.vue'
+      }
+    ],
+    aircraft: [
+      {
+        path: (node) => {
+          console.log(node.post_name)
+          return `/aircraft/${node.post_name}`
+        },
+        component: './src/templates/aircraft.vue'
       }
     ]
   }
