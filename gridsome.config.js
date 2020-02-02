@@ -3,8 +3,39 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const path = require('path')
+
+function addStyleResource (rule) {
+  rule.use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [
+        path.resolve(__dirname, './src/assets/sass/_globals.sass'),
+        // or if you use scss
+        path.resolve(__dirname, './src/assets/sass/_globals.scss'),
+        // you can also use a glob if you'd prefer
+        path.resolve(__dirname, './src/assets/sass/*.sass'),
+        // or scss
+        path.resolve(__dirname, './src/assets/sass/*.scss'),
+      ],
+    })
+}
 
 module.exports = {
+  chainWebpack (config) {
+    // Load variables for all vue-files
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    
+    types.forEach(type => {
+      addStyleResource(config.module.rule('sass').oneOf(type))
+    })
+
+    // or if you use scss
+    types.forEach(type => {
+      addStyleResource(config.module.rule('scss').oneOf(type))
+    })
+	},
+
   siteName: 'Gridsome',
   plugins: [
     {
@@ -17,11 +48,11 @@ module.exports = {
         concurrent: 10,
         customEndpoints: [
           {
-            typeName: "testimonial",
+            typeName: "Testimonial",
             route: 'markers/v1/testimonial',
           },
           {
-            typeName: "aircraft",
+            typeName: "Aircraft",
             route: 'markers/v1/aircraft'
           },
           {
@@ -29,7 +60,7 @@ module.exports = {
             route: 'markers/v1/inventory'
           },
           {
-            typeName: "projects",
+            typeName: "Projects",
             route: 'markers/v1/projects'
           }
         ]
@@ -45,13 +76,12 @@ module.exports = {
         component: './src/templates/WordPressPost.vue'
       }
     ],
-    aircraft: [
+    Aircraft: [
       {
         path: (node) => {
-          console.log(node.post_name)
           return `/aircraft/${node.post_name}`
         },
-        component: './src/templates/aircraft.vue'
+        component: './src/templates/Aircraft.vue'
       }
     ]
   }

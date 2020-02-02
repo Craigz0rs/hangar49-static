@@ -1,7 +1,9 @@
 <template>
-  <div>
-  	<h1>{{$page.aircraft.post_name}}</h1>
-  </div>
+  <layout>
+      <div>
+        <h1>{{$page.aircraft.post_name}}</h1>
+      </div>
+  </layout>
 </template>
 
 <page-query>
