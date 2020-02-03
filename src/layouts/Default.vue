@@ -77,11 +77,13 @@ body {
 }
 
 .header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   height: 80px;
+  z-index: 99;
 }
 
 .nav__link {
@@ -89,10 +91,12 @@ body {
 }
 
 .site-footer {
+    position: relative;
     text-align: center;
     padding-top: 22px;
     color: white;
     background-color: $color_footer-background;
+    z-index: 10;
 }
 
 .footer_wrapper {

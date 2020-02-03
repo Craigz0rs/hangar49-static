@@ -10,12 +10,7 @@ function addStyleResource (rule) {
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, './src/assets/sass/_globals.sass'),
-        // or if you use scss
         path.resolve(__dirname, './src/assets/sass/_globals.scss'),
-        // you can also use a glob if you'd prefer
-        path.resolve(__dirname, './src/assets/sass/*.sass'),
-        // or scss
         path.resolve(__dirname, './src/assets/sass/*.scss'),
       ],
     })

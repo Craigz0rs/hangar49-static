@@ -1,12 +1,18 @@
 <template>
   <Layout>
-    <g-image :src="require('~/assets/images/background-min.jpg')" blur="40"></g-image>
+    <g-image 
+      :src="require('~/assets/images/background-min.jpg')"
+      blur="40"
+      class="home__hero-image"
+      >
+    </g-image>
     <div class="home__wrapper">
       <TheHomeHero
         :headline="$page.fields.acf.headline"
         :introText="$page.fields.acf.introText"
       >
       </TheHomeHero>
+      <div class="home__wrapper--white">
       <section class="home__services info-bar">
         <div class="content-wrapper">
           <InfoBar
@@ -70,7 +76,8 @@
           </div>
         </div>
       </section> 
-      <TestimonialSlider/>          
+      <TestimonialSlider/>
+      </div>          
     </div>
   </Layout>
 </template>
@@ -115,9 +122,10 @@ query {
       headline
       introText
       sellingFeatures {
-        sellingFeatureIcon,
-        sellingFeatureTitle,
+        sellingFeatureTitle
         sellingFeatureInfo
+        sellingFeatureIconPrefix
+        sellingFeatureIconName
       }
     }
   }
@@ -201,7 +209,17 @@ export default {
 }
 
 .home {
+  &__hero-image {
+    position: fixed;
+    object-fit: cover;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
   &__wrapper {
+    position: relative;
     min-height: 100vh;
     width: 100%;
     background-attachment: fixed;
@@ -209,6 +227,11 @@ export default {
     background-size: cover;
     -webkit-background-size: cover;
     background-position: bottom;
+    z-index: 10;
+
+    &--white {
+      background: white;
+    }
   }
 }
 </style>

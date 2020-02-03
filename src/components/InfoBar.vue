@@ -4,10 +4,13 @@
             v-for="feature in allFeatures"
             :key="feature.sellingFeatureTitle"
             class="feature__item"
-            >
-            <div 
-                v-html="feature.sellingFeatureIcon"
-                class="feature__icon">
+        >
+            <div class="feature__icon-wrap">
+                <font-awesome-icon 
+                    :icon="[feature.sellingFeatureIconPrefix, feature.sellingFeatureIconName]"
+                    class="feature__icon" 
+                >
+                </font-awesome-icon>
             </div>
             <h2 
                 v-html="feature.sellingFeatureTitle"
@@ -21,6 +24,14 @@
     </ul>
 </template>
 <script>
+import {
+    faFirstAid, 
+    faCogs, 
+    faHandshake
+} from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+library.add(faFirstAid, faCogs, faHandshake);
 
 export default {
   name: "InfoBar",
