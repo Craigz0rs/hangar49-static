@@ -1,10 +1,10 @@
 <template>
   <Layout>
     <g-image 
-      :src="require('~/assets/images/background-min.jpg')"
+      :src="$page.fields.featuredMedia.sourceUrl"
       blur="40"
       class="home__hero-image"
-      >
+    >
     </g-image>
     <div class="home__wrapper">
       <TheHomeHero
@@ -24,51 +24,10 @@
       <section class="home__latest-inventory" id="home_inventory_section">
         <div class="content-wrapper page_main_wrapper" id="home_main_wrapper">
           <div class="home__latest-inventory-wrapper latest_wrapper">
-            <div class="home_latest_list" id="home_latest_inventory">
-              <h2 class="detail_section_title">Newest Inventory</h2>
-              <article 
-                v-for="edge in $page.inventory.edges" 
-                :key="edge.node.ID"
-                class="home_list_item home_latest_aircraft_item inventory_listing" 
-              >
-                <div 
-                  v-if="edge.node.acf.featured_image"
-                  class="list_item_image"
-                >
-                  <g-image
-                    :src="edge.node.acf.featured_image.url" 
-                    blur="40"
-                  />
-                </div>
-                <div class="list_item_info">
-                  <div class="list_item_overlay"></div>
-                  <div class="list_item_overlay2"></div>
-                  <div class="article_excerpt_title">
-                    <h1 class="entry-title">
-                      <g-link 
-                        :to="getPath(edge.node.acf.inventory_aircraft[0].ID)"
-                      >
-                        {{getYear(edge.node.acf.inventory_aircraft[0].ID)}} 
-                        {{getManufacturer(edge.node.acf.inventory_aircraft[0].ID)}} 
-                        {{getModel(edge.node.acf.inventory_aircraft[0].ID)}}
-                      </g-link>
-                    </h1>
-                    <div class="list_item_pitch">
-                      <p>{{edge.node.acf.sale_info}}</p>
-                    </div>
-                    <footer class="list_item_footer">
-                      <div class="list_item_meta">
-                        <p v-if="edge.node.acf.coming_soon">COMING SOON</p>
-                        <p v-if="edge.node.acf.price_reduced">PRICE REDUCED</p>
-                      </div>
-                      <div class="article_read_more">
-                        <g-link :to="getPath(edge.node.acf.inventory_aircraft[0].ID)">learn more</g-link>
-                      </div>
-                    </footer>
-                  </div>
-                </div>
-              </article>
-            </div>
+            <InventoryList
+              :inventoryList="$page.inventory.edges"
+            >
+            </InventoryList>  
             <div id="home_inventory_splash">
               <div id="home_inventory_splash_overlay"></div>
               <div id="home_inventory_splash_overlay2"></div>
@@ -118,6 +77,9 @@ query {
     }
   }
   fields: wordPressPage(id: "13") {
+    featuredMedia {
+      sourceUrl
+    }
     acf {
       headline
       introText
@@ -136,6 +98,7 @@ query {
 import TheHomeHero from "~/components/TheHomeHero.vue";
 import TestimonialSlider from "~/components/TestimonialSlider.vue";
 import InfoBar from "~/components/InfoBar.vue";
+import InventoryList from "~/components/InventoryList.vue";
 
 export default {
   metaInfo: {
@@ -144,7 +107,8 @@ export default {
   components: {
     TestimonialSlider,
     TheHomeHero,
-    InfoBar
+    InfoBar,
+    InventoryList
   },
   data() {
     return {
