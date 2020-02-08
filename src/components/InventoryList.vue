@@ -7,10 +7,9 @@
             :edge="edge"
             :airplane="edge.node.acf.inventory_aircraft[0].ID"
             :aircraft="getAircraft(edge.node.acf.inventory_aircraft[0].ID)"
-            :featuredImage="edge.node.acf.featured_image"
+
         >
         </InventoryListItem>
-        {{this.allAircraft}}
     </div> 
 </template>
 <static-query>

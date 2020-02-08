@@ -4,27 +4,29 @@
         v-bind:style='{ backgroundImage: "url(" + featureBackground + ")", }'
     >
         <div class="feature__overlay"></div>
-        <li 
-            v-for="feature in allFeatures"
-            :key="feature.sellingFeatureTitle"
-            class="feature__item"
-        >
-            <div class="feature__icon-wrap">
-                <font-awesome-icon 
-                    :icon="[feature.sellingFeatureIconPrefix, feature.sellingFeatureIconName]"
-                    class="feature__icon" 
-                >
-                </font-awesome-icon>
-            </div>
-            <h2 
-                v-html="feature.sellingFeatureTitle"
-                class="feature__title">
-            </h2>
-            <p 
-                v-html="feature.sellingFeatureInfo"
-                class="feature__text">
-            </p>
-        </li>
+        <div class="content-wrapper">
+            <li 
+                v-for="feature in allFeatures"
+                :key="feature.sellingFeatureTitle"
+                class="feature__item"
+            >
+                <div class="feature__icon-wrap">
+                    <font-awesome-icon 
+                        :icon="[feature.sellingFeatureIconPrefix, feature.sellingFeatureIconName]"
+                        class="feature__icon" 
+                    >
+                    </font-awesome-icon>
+                </div>
+                <h2 
+                    v-html="feature.sellingFeatureTitle"
+                    class="feature__title">
+                </h2>
+                <p 
+                    v-html="feature.sellingFeatureInfo"
+                    class="feature__text">
+                </p>
+            </li>
+        </div>
     </ul>
 </template>
 <script>

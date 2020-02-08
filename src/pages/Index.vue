@@ -14,12 +14,10 @@
       </TheHomeHero>
       <div class="home__wrapper--white">
       <section class="home__services info-bar">
-        <div class="content-wrapper">
-          <InfoBar
-            :allFeatures="$page.fields.acf.sellingFeatures"
-          >
-          </InfoBar>
-        </div>
+        <InfoBar
+          :allFeatures="$page.fields.acf.sellingFeatures"
+        >
+        </InfoBar>
       </section>
       <section class="home__latest-inventory" id="home_inventory_section">
         <div class="content-wrapper page_main_wrapper" id="home_main_wrapper">
@@ -194,7 +192,7 @@ export default {
     z-index: 10;
 
     &--white {
-      background: white;
+      background: $color_background_main;
     }
   }
 }

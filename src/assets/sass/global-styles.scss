@@ -1,0 +1,15 @@
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 10px;
+    background-color: $color_background_main;
+
+    @media screen and (min-width: 960px) {
+        flex-wrap: nowrap;
+        padding: 40px 20px;
+    }
+
+    @media screen and (min-width: 1300px) {
+        padding: 40px;
+    }
+}
