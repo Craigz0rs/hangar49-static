@@ -1,0 +1,3484 @@
+@charset "UTF-8";
+/*!
+Theme Name: Hangar 49
+Theme URI: http://underscores.me/
+Author: Craig D\'Arcy
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: hangar49
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Hangar 49 is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background-color: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #404040;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both; }
+
+p {
+  margin-bottom: 1.5em; }
+
+dfn, cite, em, i {
+  font-style: italic; }
+
+blockquote {
+  margin: 0 1.5em; }
+
+address {
+  margin: 0 0 1.5em; }
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em; }
+
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem; }
+
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none; }
+
+big {
+  font-size: 125%; }
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit; }
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */ }
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em; }
+
+ul, ol {
+  margin: 0 0 1.5em 3em; }
+
+ul {
+  list-style: disc; }
+
+ol {
+  list-style: decimal; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 1.5em 1.5em; }
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */ }
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #e6e6e6;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: .6em 1em .4em; }
+  button:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover {
+    border-color: #ccc #bbb #aaa; }
+  button:active, button:focus,
+  input[type="button"]:active,
+  input[type="button"]:focus,
+  input[type="reset"]:active,
+  input[type="reset"]:focus,
+  input[type="submit"]:active,
+  input[type="submit"]:focus {
+    border-color: #aaa #bbb #bbb; }
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px; }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  input[type="range"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="week"]:focus,
+  input[type="time"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="color"]:focus,
+  textarea:focus {
+    color: #111; }
+
+select {
+  border: 1px solid #ccc; }
+
+textarea {
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: royalblue; }
+  a:visited {
+    color: purple; }
+  a:hover, a:focus, a:active {
+    color: midnightblue; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%; }
+  .main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0; }
+    .main-navigation ul ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 100%;
+      left: -999em;
+      z-index: 99999; }
+      .main-navigation ul ul ul {
+        left: -999em;
+        top: 0; }
+      .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+        left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      left: auto; }
+  .main-navigation li {
+    float: left;
+    position: relative; }
+  .main-navigation a {
+    display: block;
+    text-decoration: none; }
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block; }
+
+@media screen and (min-width: 1em) {
+  .menu-toggle {
+    display: none; }
+
+  .main-navigation ul {
+    display: block; } }
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%; }
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%; }
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */ }
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */ }
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0; }
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: "";
+  display: table;
+  table-layout: fixed; }
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */ }
+  .widget select {
+    max-width: 100%; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+  display: block; }
+
+.hentry {
+  margin: 0 0 1.5em; }
+
+.updated:not(.published) {
+  display: none; }
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0; }
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em; }
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+  word-wrap: break-word; }
+
+.bypostauthor {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none; }
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+  display: inline-block; }
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%; }
+  .wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .wp-caption .wp-caption-text {
+    margin: 0.8075em 0; }
+
+.wp-caption-text {
+  text-align: center; }
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+  margin-bottom: 1.5em; }
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%; }
+  .gallery-columns-2 .gallery-item {
+    max-width: 50%; }
+  .gallery-columns-3 .gallery-item {
+    max-width: 33.33%; }
+  .gallery-columns-4 .gallery-item {
+    max-width: 25%; }
+  .gallery-columns-5 .gallery-item {
+    max-width: 20%; }
+  .gallery-columns-6 .gallery-item {
+    max-width: 16.66%; }
+  .gallery-columns-7 .gallery-item {
+    max-width: 14.28%; }
+  .gallery-columns-8 .gallery-item {
+    max-width: 12.5%; }
+  .gallery-columns-9 .gallery-item {
+    max-width: 11.11%; }
+
+.gallery-caption {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.site {
+  min-height: 100vh; }
+
+.site-main {
+  overflow: hidden;
+  background-color: #F3F3F3; }
+
+.page_header_wrapper {
+  background-color: black;
+  overflow: hidden; }
+
+.page_header {
+  height: 45vh;
+  position: relative;
+  top: 0; }
+
+.page_header_overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: -moz-linear-gradient(top, transparent 0%, transparent 58%, black 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, transparent 0%, transparent 58%, black 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, transparent 0%, transparent 58%, black 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */ }
+
+.page_header h1 {
+  position: absolute;
+  color: white;
+  top: 1em;
+  font-family: "Orbitron", sans-serif;
+  font-size: 3.3em;
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  line-height: 1em; }
+
+.page_header h2 {
+  margin: 0;
+  position: absolute;
+  bottom: 2em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Jura", sans-serif;
+  color: #8C8C8C; }
+
+.page_main_wrapper {
+  max-width: 1920px;
+  margin: 0 auto; }
+
+.content_wrapper {
+  padding: 0 10px; }
+
+@media screen and (max-height: 500px) and (min-width: 500px) {
+  .page_header {
+    height: 75vh; } }
+.home_screen {
+  min-height: 100vh;
+  width: 100%;
+//   background-image: url(images/homepage.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-position: bottom; }
+
+#home_inventory_section {
+  position: relative;
+  background-color: #F3F3F3;
+  width: 100%;
+  overflow: hidden; }
+
+#front_intro_wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 0; }
+
+#page_header_overlay_front {
+  bottom: 0;
+  background: -moz-linear-gradient(top, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.81) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.81) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.81) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cf000000',GradientType=0 );
+  /* IE6-9 */
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.intro {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding-top: 19vh;
+  z-index: 1; }
+
+.intro h1 {
+  font-size: 2.5em;
+  font-family: "Orbitron", sans-serif; }
+
+.intro h1:first-of-type {
+  font-size: 3em;
+  margin-bottom: 0px; }
+
+.intro h1:nth-of-type(2) {
+  margin-top: -27px; }
+
+.intro h2 {
+  font-size: 1em;
+  font-family: 'Jura', sans-serif;
+  padding: 10px 0;
+  font-weight: 900;
+  margin-bottom: 90px; }
+
+.intro p {
+  font-family: "Metrophobic", sans-serif;
+  font-size: 0.7em;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0 25px; }
+
+.home_navigation {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
+
+.home_nav_block {
+  display: inline-block;
+  width: 33%;
+  min-height: 110px;
+  margin: 0;
+  background-color: rgba(153, 153, 153, 0.35);
+  transition: 0.2s;
+  overflow: hidden; }
+
+.home_navigation a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-top: 21px;
+  font-family: "Orbitron", sans-serif;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+  overflow: hidden; }
+
+.home_navigation i {
+  font-size: 2.5em;
+  color: rgba(255, 255, 255, 0.5);
+  padding-top: 0px;
+  transition: 0.2s; }
+
+.home_nav_block:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.2s; }
+
+.home_nav_block:hover a {
+  color: #3F8C3F;
+  transition: 0.2s; }
+
+.home_nav_block:hover i,
+.home_nav_block:active i {
+  color: #3F8C3F;
+  padding-top: 0px;
+  transition: 0.2s;
+  transform: rotate(270deg); }
+
+.home_nav_block:hover #envelope,
+.home_nav_block:active #envelope {
+  transform: rotate(360deg); }
+
+.home_nav_block:hover #wrench,
+.home_nav_block:active #wrench {
+  transform: rotate(270deg) scaleX(-1); }
+
+.full_width_info_bar {
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 115px;
+  z-index: 1; }
+
+#home_services_info_bar {
+//   background-image: url("images/clouds.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.info_bar_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(45, 45, 45, 0.9); }
+
+.service_feature {
+  margin: 0 25px;
+  text-align: center;
+  width: 400px;
+  z-index: 99; }
+  .service_feature .feature_icon {
+    color: #E1E1E1;
+    font-size: 60px;
+    padding-bottom: 17px; }
+  .service_feature h2 {
+    padding-bottom: 5px;
+    font-size: 1.9rem;
+    background-color: transparent;
+    color: #3F8C3F; }
+  .service_feature p {
+    color: #E1E1E1; }
+
+@media screen and (max-width: 1220px) {
+  .full_width_info_bar {
+    padding: 50px 25px; } }
+@media screen and (max-width: 865px) {
+  .full_width_info_bar {
+    flex-wrap: wrap;
+    padding: 50px 0px; }
+
+  .service_feature {
+    width: 100%;
+    padding-bottom: 20px; }
+    .service_feature .feature_icon {
+      border-top: 1px solid #75736f;
+      margin: 0 auto;
+      width: 200px;
+      padding-top: 25px; }
+    .service_feature h2 {
+      max-width: 300px;
+      margin: 0 auto;
+      margin-bottom: 20px; }
+    .service_feature p {
+      max-width: 445px;
+      margin: 0 auto;
+      margin-bottom: 22px; }
+
+  .full_width_info_bar div:nth-of-type(2) .feature_icon {
+    border-top: none;
+    padding-top: 0; } }
+#home_projects {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: white;
+  height: 90vh;
+  width: 100%; }
+
+.home_project {
+  position: relative;
+  overflow: hidden; }
+
+#home_main_wrapper {
+  min-height: 250px;
+  padding: 40px;
+  overflow: hidden; }
+
+.latest_wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+
+.home_latest_list {
+  position: relative;
+  width: 60%;
+  z-index: 3; }
+  .home_latest_list .detail_section_title {
+    margin-bottom: 5px; }
+
+.detail_section_title {
+  margin-bottom: 25px; }
+
+.home_latest_aircraft_item .entry-title a {
+  font-size: 23px; }
+
+#home_inventory_splash {
+  height: 100%;
+  width: 39%;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-position: center;
+  z-index: 2; }
+
+#home_inventory_splash_overlay {
+  background-color: #5E5E5E;
+  height: 110%;
+  width: 61px;
+  transform: rotate(-17deg) translateX(-43px) translateY(-5%);
+  transform-origin: top right; }
+
+#home_inventory_splash_overlay2 {
+  background-color: #F3F3F3;
+  height: 125%;
+  width: 280px;
+  transform: rotate(-17deg) translateX(-257px) translateY(-12%);
+  transform-origin: top right;
+  position: absolute;
+  top: 0; }
+
+#home_testimonials_bar {
+  position: relative;
+  color: white;
+//   background-image: url("images/runway-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center; }
+  #home_testimonials_bar .info_bar_overlay {
+    background-color: rgba(134, 134, 134, 0.95); }
+
+#testimonial_slider {
+  position: relative;
+  width: 500px; }
+  #testimonial_slider .flex-control-nav,
+  #testimonial_slider .flex-direction-nav {
+    display: none; }
+  #testimonial_slider .slides {
+    margin: 0;
+    padding: 0; }
+    #testimonial_slider .slides li {
+      padding: 0 10px; }
+  #testimonial_slider .testimonial_text {
+    text-align: center;
+    font-family: "Metrophobic", sans-serif;
+    font-size: 24px; }
+  #testimonial_slider .testimonial_name {
+    margin-bottom: 0;
+    text-align: right;
+    font-family: "Jura", sans-serif;
+    font-size: 18px;
+    color: #2D2D2D; }
+  #testimonial_slider .testimonial_quotes {
+    color: #A1A1A1;
+    position: absolute;
+    font-size: 60px;
+    line-height: 110px;
+    font-family: 'metrophobic'; }
+  #testimonial_slider #testimonial_open_quote {
+    top: -30px;
+    left: 0; }
+  #testimonial_slider #testimonial_closing_quote {
+    bottom: 50px;
+    right: 0; }
+
+@media screen and (max-width: 1299px) {
+  .home_latest_list {
+    width: 75%; }
+
+  #home_inventory_splash {
+    width: 25%; } }
+@media screen and (max-width: 1023px) {
+  .home_latest_list {
+    width: 100%; }
+
+  #home_inventory_splash {
+    display: none; } }
+@media screen and (max-width: 959px) {
+  #home_main_wrapper {
+    padding: 40px 10px; } }
+@media screen and (max-width: 865px) {
+  #home_main_wrapper {
+    padding: 0; }
+
+  .home_latest_list .detail_section_title {
+    padding: 25px 0px;
+    margin-bottom: 25px; }
+
+  .home_list_item {
+    margin: 10px 25px; } }
+@media screen and (max-width: 768px) {
+  .home_list_item {
+    margin: 10px; } }
+@supports (grid-area: auto) {
+  @media screen and (min-width: 700px) {
+    .intro h1:first-of-type {
+      font-size: 4em; }
+
+    .intro h1:nth-of-type(2) {
+      font-size: 3.33em;
+      margin-top: -34px; }
+
+    .intro h2 {
+      font-size: 1.5em; }
+
+    .intro p {
+      font-size: 1em; } }
+  @media screen and (min-width: 1024px) {
+    .intro h1:first-of-type {
+      font-size: 6em;
+      margin-bottom: 0px; }
+
+    .intro h1:nth-of-type(2) {
+      font-size: 5em;
+      margin-top: -52px; }
+
+    .intro h2 {
+      font-size: 2em; } } }
+#contact_page_background {
+//   background-image: url(images/contact_header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw; }
+
+#contact_wrapper {
+  color: white;
+  font-family: "Metrophobic", sans-serif;
+  min-height: 100vh;
+  padding: 0 10px; }
+
+#contact_wrapper h1 {
+  position: absolute;
+  color: white;
+  top: 65px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 3.3em;
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  line-height: 1em; }
+
+.contact_info_wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 115px 10px 45px 10px;
+  text-align: left; }
+
+#contact_wrapper h2 {
+  font-size: 1.5em; }
+
+.location {
+  margin: 0 auto;
+  max-width: 400px; }
+
+.location p {
+  text-align: left; }
+
+.contact_info {
+  max-width: 400px;
+  margin: 0 auto; }
+
+.contact_info ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: left; }
+
+.contact_info a {
+  text-decoration: none;
+  color: white; }
+
+.contact_info i {
+  margin-right: 4px; }
+
+#address_li {
+  margin-bottom: 20px; }
+
+#phone_li i {
+  margin-right: 7px; }
+
+.follow_us {
+  margin-top: 50px; }
+
+.follow_us ul {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 500px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between; }
+
+.follow_us li {
+  display: inline-block; }
+
+.follow_us a {
+  font-size: 2.5em;
+  color: white;
+  transition: 0.2s; }
+
+.follow_us a:hover,
+.follow_us a:focus,
+.follow_us a:active {
+  color: #3F8C3F;
+  transition: 0.2s; }
+
+.contact_form {
+  padding-top: 1px;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.contact_form h2 {
+  margin: 0 auto;
+  max-width: 400px;
+  padding-bottom: 12px; }
+
+#wpcf7-f87-o1 {
+  text-align: center; }
+
+.wpcf7-form p:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 25px; }
+
+.wpcf7-textarea,
+.wpcf7-text {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white !important;
+  border-radius: 0px !important; }
+
+.wpcf7-text {
+  height: 45px; }
+
+.wpcf7-submit {
+  width: 100%;
+  max-width: 400px;
+  height: 45px;
+  font-family: jura;
+  color: white !important;
+  background-color: rgba(153, 153, 153, 0.6) !important;
+  font-size: 1em !important;
+  line-height: 38px;
+  padding: 0 !important;
+  border: 2px solid white !important;
+  border-radius: 0px !important;
+  font-weight: bolder;
+  transition: 0.2s; }
+
+.wpcf7-submit:hover,
+.wpcf7-submit:focus,
+.wpcf7-submit:active {
+  color: #3F8C3F !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid white !important;
+  transition: 0.2s; }
+
+.ajax-loader {
+  display: none !important; }
+
+@supports (grid-area: auto) {
+  @media screen and (max-width: 440px) {
+    .contact_form h2 {
+      margin-left: 10px; } }
+  @media screen and (min-width: 600px) {
+    #contact_wrapper h1 {
+      font-size: 4em;
+      top: 80px; }
+
+    .contact_info_wrapper {
+      padding-top: 150px; } }
+  @media screen and (min-width: 900px) {
+    #contact_wrapper {
+      display: grid;
+      background-color: transparent;
+      padding: 0 20px;
+      margin: 0 auto;
+      max-width: 1600px;
+      min-height: 100vh;
+      grid-template: ". . ." 100px "contact . form" 1fr / 1fr 0.1fr 1fr; }
+
+    #contact_wrapper h1 {
+      position: absolute;
+      color: white;
+      top: 1.3em;
+      font-family: "Orbitron", sans-serif;
+      font-size: 5.3em;
+      text-align: center;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      line-height: 1em; }
+
+    #contact_wrapper h2 {
+      font-size: 1.5em; }
+
+    #contact_wrapper p {
+      font-size: 1em; }
+
+    .contact_info_wrapper {
+      grid-area: contact;
+      align-self: end;
+      height: 100%;
+      padding: 135px 50px 0 50px;
+      text-align: center; }
+
+    .contact_info_wrapper h2 {
+      margin-bottom: 35px; }
+
+    .contact_info {
+      margin-top: 40px; }
+
+    .contact_info ul {
+      font-size: 1em; }
+
+    .follow_us {
+      margin-top: 100px;
+      font-size: 1em; }
+
+    .contact_form {
+      grid-area: form;
+      align-self: end;
+      height: 100%;
+      padding: 160px 0 0 0;
+      background-color: transparent; }
+
+    .contact_form h2 {
+      margin-left: 10%;
+      max-width: 500px;
+      text-align: center;
+      margin-bottom: 5px; }
+
+    #wpcf7-f87-o1 {
+      display: flex;
+      justify-content: right;
+      padding-left: 10%;
+      text-align: left; }
+
+    .wpcf7-form {
+      width: 100%; }
+
+    .wpcf7-form p:last-of-type {
+      text-align: right;
+      max-width: 500px; }
+
+    .wpcf7-text {
+      width: 100%;
+      height: 45px;
+      max-width: 500px;
+      font-weight: 600; }
+
+    .wpcf7-textarea {
+      font-weight: 600;
+      max-width: 500px; }
+
+    .wpcf7-submit {
+      width: 50%; }
+
+    ::-webkit-input-placeholder {
+      /* WebKit, Blink, Edge */
+      color: #dfdfdf;
+      font-weight: 500; }
+
+    :-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #dfdfdf;
+      opacity: 1;
+      font-weight: 500; }
+
+    ::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #dfdfdf;
+      opacity: 1;
+      font-weight: 500; }
+
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #dfdfdf;
+      font-weight: 500; }
+
+    ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #dfdfdf;
+      font-weight: 500; }
+
+    ::placeholder {
+      /* Most modern browsers support this now. */
+      color: #dfdfdf;
+      font-weight: 500; } } }
+.article_header {
+  min-height: 75px;
+  padding: 25px 10px;
+  padding-right: 10px;
+  font-family: "Metrophobic", sans-serif;
+  border-bottom: 2px solid #F3F3F3; }
+
+.article_title {
+  font-family: "Jura", sans-serif;
+  color: #3F8C3F; }
+
+.article_header .article_title {
+  margin-bottom: 10px; }
+
+.entry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Metrophobic", sans-serif;
+  color: #868686; }
+
+.article_category_list {
+  display: flex;
+  flex-grow: 1;
+  max-width: 100%; }
+
+.article_category_list svg {
+  margin-top: 5px; }
+
+.article_category_list ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.article_media figure {
+  width: 100%;
+  margin: 0; }
+
+.article_media figure img {
+  max-height: 425px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center; }
+
+.article_media figcaption {
+  padding: 0 50px 10px;
+  text-align: center;
+  font-family: "Metrophobic", sans-serif;
+  border-bottom: 2px solid #F3F3F3;
+  color: #868686; }
+
+.archive_sorting {
+  z-index: 2;
+  bottom: 40px;
+  position: absolute;
+  left: 0;
+  right: 0; }
+
+.now_viewing {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+  border: 2px solid white;
+  line-height: 55px;
+  transition: 0.3s;
+  color: white;
+  text-decoration: none;
+  font-family: "Jura", sans-serif;
+  font-size: 1.5rem; }
+
+.archive_sorting a {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 175px;
+  border: 2px solid white;
+  line-height: 40px;
+  transition: 0.3s;
+  color: white;
+  text-decoration: none;
+  font-family: "Jura", sans-serif; }
+
+.archive_sorting a:hover {
+  background-color: white;
+  color: #3F8C3F;
+  transition: 0.3s; }
+
+#inventory_page_main_wrapper,
+#project_page_main_wrapper {
+  background-color: black; }
+
+.aircraft_tiles {
+  min-height: 25vh;
+  max-width: 1920px;
+  margin: 0 auto; }
+
+.aircraft_tile {
+  width: 100%;
+  height: 75vw;
+  max-height: 480px;
+  background-size: cover;
+  background-position: center center; }
+
+.aircraft_tile img {
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0);
+  transition: 0.5s ease-in-out; }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .aircraft_tile img {
+    display: none; } }
+@supports (-ms-ime-align: auto) {
+  .aircraft_tile img {
+    display: none; } }
+.aircraft_tile:hover img,
+.aircraft_tile:focus img,
+.aircraft_tile:active img {
+  filter: grayscale(60%);
+  transform: scale(1.1);
+  transition: 5s ease-out; }
+
+.aircraft_tile h3 {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  color: white;
+  font-family: "Jura", sans-serif;
+  text-align: center;
+  text-decoration: none; }
+
+.aircraft_brief {
+  position: absolute;
+  top: 27%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-family: "Metrophobic", sans-serif;
+  font-size: 0.7em;
+  text-align: center;
+  padding: 0 30px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s; }
+
+.aircraft_tile:hover .aircraft_brief,
+.aircraft_tile:focus .aircraft_brief,
+.aircraft_tile:active .aircraft_brief {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-10px); }
+
+.read_more {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  border: 2px solid white;
+  width: 120px;
+  margin: 0 auto;
+  color: white;
+  font-family: "Jura", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  line-height: 40px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+  transition: 0.3s; }
+
+.read_more:hover,
+.read_more:focus,
+.read_more:active {
+  color: #3F8C3F;
+  background-color: white;
+  transition: 0.3s; }
+
+.tile_overlay {
+  margin: 50px 5px;
+  padding: 0;
+  position: absolute;
+  display: block;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s; }
+
+.aircraft_tile:hover .tile_overlay,
+.aircraft_tile:focus .tile_overlay {
+  visibility: visible;
+  opacity: 1;
+  animation-name: overlay-transition;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out; }
+
+@keyframes overlay-transition {
+  0% {
+    top: 100%; }
+  100% {
+    top: 0; } }
+.aircraft_tile:hover .read_more,
+.aircraft_tile:focus .read_more,
+.aircraft_tile:active .read_more {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-10px); }
+
+.aircraft_list {
+  margin: 0;
+  padding: 10px 10px 1px 10px;
+  list-style-type: none;
+  height: 100%; }
+
+.aircraft_list li {
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0; }
+
+#aircraft_page_main_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 10px; }
+
+@media screen and (min-width: 400px) {
+  .aircraft_brief {
+    top: 25%;
+    font-size: 1em; }
+
+  .article_category_list {
+    max-width: 215px; } }
+@media screen and (min-width: 450px) {
+  .aircraft_tile h3 {
+    top: 18%;
+    font-size: 1.6em; }
+
+  .aircraft_brief {
+    top: 33%;
+    font-size: 1em; } }
+@media screen and (min-width: 500px) {
+  .aircraft_brief {
+    top: 33%;
+    font-size: 1em; } }
+@media screen and (min-width: 600px) {
+  .page_header h1,
+  #projects_page_header h1,
+  #inventory_page_header h1 {
+    font-size: 4.3em; } }
+@media screen and (max-height: 325px) {
+  .aircraft_tile {
+    max-height: 80vh; }
+
+  .aircraft_tile h3 {
+    top: 6%; }
+
+  .aircraft_brief {
+    top: 22%;
+    font-size: 0.8em; } }
+@media screen and (max-height: 500px) {
+  .aircraft_tile {
+    max-height: 80vh; }
+
+  .aircraft_tile h3 {
+    top: 10%; } }
+@media screen and (min-width: 700px) {
+  .aircraft_tile h3 {
+    font-size: 1.8em; }
+
+  .tile_overlay {
+    margin: 50px 10px; }
+
+  .aircraft_brief {
+    max-width: 500px;
+    margin: 0 auto; } }
+@media screen and (min-width: 960px) {
+  .page_header h1,
+  #projects_page_header h1,
+  #inventory_page_header h1 {
+    font-size: 5.3em; }
+
+  .archive_sorting {
+    bottom: 80px; }
+
+  .now_viewing {
+    width: 250px;
+    line-height: 71px;
+    font-size: 2rem; }
+
+  .aircraft_list {
+    padding: 10px 20px 1px 20px; }
+
+  .aircraft_list li {
+    margin: 20px 0; }
+
+  #aircraft_page_main_wrapper {
+    flex-wrap: nowrap;
+    padding: 40px 20px; }
+
+  #aircraft_page_main_wrapper .article_listings_wrapper {
+    width: calc(70% - 25px); }
+
+  #aircraft_page_main_wrapper .sidebar_wrapper {
+    width: calc(30%);
+    min-width: 325px; } }
+@media screen and (min-width: 1300px) {
+  #aircraft_page_main_wrapper {
+    padding: 40px; }
+
+  #aircraft_page_main_wrapper .article_listings_wrapper {
+    width: calc(70% - 25px); }
+
+  #aircraft_page_main_wrapper .sidebar_wrapper {
+    width: calc(30% - 25px);
+    min-width: 400px; } }
+@supports (grid-area: auto) {
+  @media screen and (min-width: 960px) {
+    .aircraft_list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      padding: 10px 10px; }
+
+    @supports (-ms-ime-align: auto) {
+      .aircraft_tile img {
+        display: block; } }
+    .aircraft_tile {
+      height: 38vw;
+      background-image: none !important; }
+
+    .aircraft_list li {
+      margin: 0; }
+
+    .tile_overlay {
+      margin: 50px 10px; } }
+  @media screen and (min-width: 1400px) {
+    .aircraft_list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; }
+
+    .aircraft_tile {
+      height: 24vw; } } }
+#inventory_page_header {
+//   background-image: url("images/inventory_small.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+  position: relative; }
+
+#inventory_page_header h2 {
+  bottom: 4em; }
+
+.inventory {
+  min-height: 100vh;
+  background-color: black; }
+
+.projects {
+  min-height: 100vh; }
+
+.inventory_title, .projects_title {
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  font-family: "Jura", sans-serif;
+  color: white;
+  background: -moz-radial-gradient(center, ellipse cover, #013b00 0%, #121c00 100%);
+  /* ff3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #013b00), color-stop(100%, #121c00));
+  /* safari4+,chrome */
+  background: -webkit-radial-gradient(center, ellipse cover, #013b00 0%, #121c00 100%);
+  /* safari5.1+,chrome10+ */
+  background: -o-radial-gradient(center, ellipse cover, #013b00 0%, #121c00 100%);
+  /* opera 11.10+ */
+  background: -ms-radial-gradient(center, ellipse cover, #013b00 0%, #121c00 100%);
+  /* ie10+ */
+  background: radial-gradient(ellipse at center, #013b00 0%, #121c00 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#013B00', endColorstr='#121C00',GradientType=1 );
+  /* ie6-9 */ }
+
+.section_title h2 {
+  margin: 0;
+  line-height: 100px; }
+
+@media screen and (min-width: 500px) {
+  #inventory_page_header {
+    // background-image: url("images/inventory_medium.jpg");
+ } }
+@media screen and (min-width: 960px) {
+  #inventory_page_header {
+    // background-image: url("images/inventory_large.jpg");
+    background-position: top; } }
+.inventory_listing {
+  position: relative;
+  display: flex;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 5px; }
+  .inventory_listing .article_excerpt_title {
+    padding: 10px 25px 10px 45px;
+    border-bottom: 2px solid #F3F3F3;
+    position: relative;
+    z-index: 2; }
+    .inventory_listing .article_excerpt_title .entry-title {
+      text-align: right; }
+      .inventory_listing .article_excerpt_title .entry-title a {
+        font-size: 25px; }
+
+.list_item_image {
+  width: 40%; }
+  .list_item_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; }
+
+.list_item_info {
+  position: relative;
+  width: 60%;
+  border-top: 5px solid #5E5E5E;
+  background-color: white; }
+  .list_item_info p {
+    margin: 0; }
+
+.list_item_overlay {
+  background-color: #5E5E5E;
+  position: absolute;
+  width: 307px;
+  height: 40px;
+  transform-origin: top left;
+  transform: rotate(107deg) translateX(-45px) translateY(-37px);
+  border-bottom: 5px solid #F3F3F3;
+  z-index: 4; }
+
+.list_item_overlay2 {
+  background-color: white;
+  position: absolute;
+  width: 220px;
+  height: 40px;
+  transform-origin: top left;
+  transform: rotate(107deg) translateX(-11px) translateY(-76px);
+  z-index: 1; }
+
+.list_item_pitch {
+  position: relative;
+  z-index: 2;
+  padding: 5px 25px 0 40px;
+  font-size: 14px;
+  text-align: right; }
+
+.list_item_serial_reg {
+  position: relative;
+  display: flex;
+  z-index: 2; }
+
+.list_item_footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 105%;
+  height: 50px;
+  padding: 4px 10px 4px 25px;
+  border-top: 2px solid #F3F3F3;
+  background-color: white;
+  z-index: 2; }
+  .list_item_footer .article_read_more a {
+    padding: 5px 15px; }
+
+.list_item_meta {
+  flex-grow: 100;
+  padding-top: 5px; }
+
+.list_item_status {
+  color: #2D2D2D;
+  font-size: 19px;
+  text-align: center; }
+
+.price_reduced,
+.new_listing {
+  color: red; }
+
+@media screen and (max-width: 1400px) {
+  .inventory_listing .article_excerpt_title .entry-title a {
+    font-size: 23px; } }
+@media screen and (max-width: 680px) {
+  .inventory_listing {
+    height: auto;
+    flex-wrap: wrap;
+    margin-bottom: 20px; }
+
+  .list_item_image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 5px; }
+
+  .list_item_info {
+    width: 100%;
+    border: none;
+    z-index: 5; }
+
+  .list_item_overlay {
+    width: 600px;
+    height: 300px;
+    transform-origin: bottom left;
+    transform: rotate(-73deg) translateX(30px) translateY(-66px);
+    border: none; }
+
+  .list_item_overlay2 {
+    width: 600px;
+    transform-origin: bottom left;
+    z-index: 2;
+    transform: rotate(-73deg) translateX(-150px) translateY(16px); }
+
+  .inventory_listing .article_excerpt_title {
+    z-index: 5;
+    border-top: 5px solid #5E5E5E;
+    background-color: white; }
+
+  .inventory_listing .article_excerpt_title .entry-title {
+    text-align: left; }
+
+  .list_item_pitch {
+    z-index: 5;
+    padding: 5px 25px 5px 45px;
+    text-align: left;
+    background-color: white; }
+
+  .list_item_footer {
+    position: relative;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap; } }
+@media screen and (max-width: 600px) {
+  .list_item_footer {
+    padding-left: 45px; }
+
+  .list_item_status {
+    text-align: left; }
+
+  .list_item_footer .article_read_more {
+    margin-top: 0; } }
+@media screen and (max-width: 400px) {
+  .inventory_listing .article_excerpt_title {
+    padding: 10px 20px; }
+
+  .list_item_pitch {
+    padding: 5px 20px; }
+
+  .list_item_footer {
+    padding: 5px 20px; }
+
+  .list_item_status {
+    font-size: 18px; } }
+#projects_page_header {
+//   background-image: url("images/projects_small.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+  position: relative; }
+
+.projects {
+  background-color: black;
+  min-height: 100vh; }
+
+.project_list {
+  margin: 0;
+  list-style-type: none; }
+
+.project_list li {
+  overflow: hidden;
+  position: relative; }
+
+@media screen and (min-width: 500px) {
+  #projects_page_header {
+    // background-image: url("images/projects_medium.jpg"); 
+} }
+@media screen and (min-width: 960px) {
+  #projects_page_header {
+    // background-image: url("images/projects_large.jpg");
+    background-position: center; } }
+.aircraft_page_nav {
+  background-color: black;
+  height: 150px; }
+
+#aircraft_page_header {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative; }
+
+#aircraft_page_header h1 {
+  top: 2em;
+  font-size: 2rem;
+  padding: 0 10px; }
+
+.header_info_box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2; }
+
+.header_info_box {
+  top: 9em;
+  font-family: "Metrophobic", sans-serif;
+  font-weight: 500;
+  color: white;
+  z-index: 2;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center; }
+
+#aircraft_page_header p {
+  margin-bottom: 0; }
+
+#aircraft_page_header .special_info {
+  margin: 0 auto;
+  margin-top: 13px;
+  max-width: 350px;
+  font-size: 0.7em; }
+
+#aircraft_sorting {
+  bottom: 1.5em;
+  padding: 0 50px; }
+
+#aircraft_sorting a {
+  padding: 0;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 260px; }
+
+@media screen and (max-height: 500px) {
+  .header_info_box {
+    top: 6.5em; }
+
+  #aircraft_sorting {
+    display: flex;
+    justify-content: space-between;
+    bottom: 1em;
+    margin: 0 auto;
+    padding: 0 15px; }
+
+  #aircraft_sorting a {
+    max-width: 28vw; } }
+@media screen and (min-width: 750px) {
+  #aircraft_page_header {
+    height: 75vh; }
+
+  #aircraft_page_header h1 {
+    top: 13vw;
+    font-size: 2.5em; }
+
+  #aircraft_sorting {
+    display: flex;
+    justify-content: space-between;
+    bottom: 3em;
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 900px; }
+
+  #aircraft_page_header p {
+    font-weight: 600; }
+
+  #aircraft_page_header .special_info {
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-top: 40px; }
+
+  #aircraft_sorting a {
+    max-width: 230px; } }
+@media screen and (min-width: 900px) {
+  #featured_slider_overlay {
+    display: none; }
+
+  #featured_slider {
+    padding-top: 0;
+    height: 100vh; }
+
+  #featured_slider img {
+    height: 100vh; }
+
+  #aircraft_page_header h1 {
+    top: 2em;
+    font-size: 3em; } }
+@media screen and (min-width: 900px) and (max-height: 620px) {
+  #aircraft_page_header h1 {
+    top: 2em; } }
+@media screen and (min-width: 900px) {
+  .header_info_box {
+    top: 10em; }
+
+  #aircraft_page_header p {
+    font-size: 1.2em; }
+
+  #aircraft_sorting {
+    bottom: 2vh; }
+
+  #aircraft_sorting a {
+    max-width: 260px;
+    margin-bottom: 25px; } }
+#gallery_slider {
+  margin-bottom: 25px;
+  background-color: white; }
+
+#project_slider,
+#exterior_slider,
+#interior_slider {
+  margin-bottom: 0;
+  background-color: transparent; }
+
+#project_slider .gallery_slides img,
+#exterior_slider .gallery_slides img,
+#interior_slider .gallery_slides img,
+#gallery_slider .gallery_slides img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 60vw;
+  padding: 2px 2px 0; }
+
+#gallery_slider .flex-control-thumbs {
+  overflow: auto;
+  max-height: 33vw; }
+
+#project_slider .flex-control-thumbs,
+#gallery_slider .flex-control-thumbs,
+#exterior_slider .flex-control-thumbs,
+#interior_slider .flex-control-thumbs {
+  display: flex;
+  flex-direction: row;
+  padding: 2px 0;
+  margin: 0 auto;
+  width: calc(100% - 2px);
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  -webkit-overflow-scrolling: touch; }
+  #project_slider .flex-control-thumbs::-webkit-scrollbar,
+  #gallery_slider .flex-control-thumbs::-webkit-scrollbar,
+  #exterior_slider .flex-control-thumbs::-webkit-scrollbar,
+  #interior_slider .flex-control-thumbs::-webkit-scrollbar {
+    display: none; }
+
+#gallery_slider .flex-control-thumbs li {
+  width: calc(33.33333333%);
+  padding: 0 1px;
+  flex-shrink: 0; }
+
+.scroll_arrow {
+  position: absolute;
+  display: block;
+  width: 35px;
+  height: calc(26vw - 20px);
+  bottom: 2px;
+  z-index: 2;
+  line-height: calc(26vw - 20px);
+  font-size: 2.5em;
+  color: rgba(255, 255, 255, 0.6); }
+
+#scroll_L_Arrow {
+  left: 2px; }
+
+#scroll_R_Arrow {
+  right: 2px;
+  text-align: right; }
+
+#scroll_U_Arrow,
+#scroll_D_Arrow {
+  display: none;
+  height: 48px;
+  position: absolute;
+  right: 0;
+  line-height: 48px;
+  text-align: center; }
+
+#scroll_U_Arrow {
+  top: 2px; }
+
+#project_slider .flex-control-thumbs li,
+#exterior_slider .flex-control-thumbs li,
+#interior_slider .flex-control-thumbs li {
+  width: calc(33.33333333%);
+  padding: 0 1px;
+  flex-shrink: 0; }
+
+#gallery_slider .flex-control-thumbs img {
+  height: calc(26vw - 20px);
+  object-fit: cover;
+  object-position: center; }
+
+#project_slider .flex-control-thumbs img,
+#exterior_slider .flex-control-thumbs img,
+#interior_slider .flex-control-thumbs img {
+  height: calc(25vw - 20px);
+  object-fit: cover;
+  object-position: center; }
+
+#project_slider .flex-direction-nav a,
+#exterior_slider .flex-direction-nav a,
+#interior_slider .flex-direction-nav a,
+#gallery_slider .flex-direction-nav a {
+  top: 30vw; }
+
+.flex-direction-nav a::before {
+  font-family: fontAwesome;
+  content: '\f0d9';
+  font-size: 38px; }
+
+.flex-direction-nav a.flex-next::before {
+  content: ""; }
+
+.flex-direction-nav a:active,
+.flex-direction-nav a:focus {
+  outline: none; }
+
+@media screen and (min-width: 700px) {
+  #project_slider .flex-control-thumbs li,
+  #exterior_slider .flex-control-thumbs li,
+  #interior_slider .flex-control-thumbs li,
+  #gallery_slider .flex-control-thumbs li {
+    width: calc(25%);
+    padding: 0 1px; }
+
+  #project_slider .flex-control-thumbs img,
+  #exterior_slider .flex-control-thumbs img,
+  #interior_slider .flex-control-thumbs img,
+  #gallery_slider .flex-control-thumbs img {
+    height: calc(17vw); }
+
+  .scroll_arrow {
+    height: 17vw;
+    width: 45px;
+    line-height: 17vw; } }
+@media screen and (max-height: 500px) {
+  #gallery_slider .gallery_slides img {
+    max-height: 100vh; }
+
+  #gallery_slider .flex-control-thumbs {
+    max-height: 22vw;
+    padding: 2px 0; }
+
+  #gallery_slider .flex-control-thumbs li {
+    width: calc(25%); }
+
+  #gallery_slider .flex-control-thumbs img {
+    height: calc(24vw - 20px); }
+
+  .scroll_arrow {
+    height: calc(24vw - 20px);
+    line-height: calc(24vw - 20px); } }
+@media screen and (min-width: 960px) {
+  #gallery_slider .gallery_slides img {
+    height: 37vw;
+    max-height: 710px; }
+
+  #gallery_slider .flex-control-thumbs img {
+    height: 10vw; }
+
+  #gallery_slider .flex-direction-nav a {
+    top: 18.5vw; }
+
+  #gallery_slider .scroll_arrow {
+    height: 10vw;
+    line-height: 10vw; }
+
+  #project_slider .gallery_slides img,
+  #interior_slider .gallery_slides img,
+  #exterior_slider .gallery_slides img {
+    height: 32vw; }
+
+  #project_slider .flex-control-thumbs img,
+  #interior_slider .flex-control-thumbs img,
+  #exterior_slider .flex-control-thumbs img {
+    height: 8vw; }
+
+  #project_slider .flex-direction-nav a,
+  #interior_slider .flex-direction-nav a,
+  #exterior_slider .flex-direction-nav a {
+    top: 16vw; }
+
+  #project_slider .scroll_arrow,
+  #interior_slider .scroll_arrow,
+  #exterior_slider .scroll_arrow {
+    height: 8vw;
+    line-height: 8vw; } }
+@media screen and (min-width: 1920px) {
+  #gallery_slider .gallery_slides img {
+    height: 710px; }
+
+  #gallery_slider .flex-control-thumbs img {
+    height: 192px; }
+
+  #gallery_slider .flex-direction-nav a {
+    top: 355px; }
+
+  #gallery_slider .scroll_arrow {
+    height: 192px;
+    line-height: 192px; }
+
+  #project_slider .gallery_slides img,
+  #interior_slider .gallery_slides img,
+  #exterior_slider .gallery_slides img {
+    height: 615px; }
+
+  #project_slider .flex-control-thumbs img,
+  #interior_slider .flex-control-thumbs img,
+  #exterior_slider .flex-control-thumbs img {
+    height: 154px; }
+
+  #project_slider .flex-direction-nav a,
+  #interior_slider .flex-direction-nav a,
+  #exterior_slider .flex-direction-nav a {
+    top: 307px; }
+
+  #project_slider .scroll_arrow,
+  #interior_slider .scroll_arrow,
+  #exterior_slider .scroll_arrow {
+    height: 154px;
+    line-height: 154px; } }
+.aircraft_section_heading {
+  padding: 17px 0;
+  font-family: "Jura", sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: #2D2D2D;
+  color: #E1E1E1; }
+
+.aircraft_section_heading h2 {
+  margin: 0;
+  position: relative; }
+
+.aircraft_section_line {
+  display: block;
+  border: none;
+  color: black;
+  height: 2px;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#3F8C3F), to(black));
+  position: relative; }
+
+@media screen and (min-width: 900px) {
+  .aircraft_section_heading {
+    padding: 0;
+    font-size: 2.45em;
+    line-height: 2;
+    height: 125px; }
+
+  .aircraft_section_heading h2 {
+    margin-left: 20px;
+    width: calc(50% - 20px);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15); }
+
+  .aircraft_section_line {
+    height: 4px;
+    background: -moz-linear-gradient(left, rgba(63, 140, 63, 0.75) 1%, #3f8c3f 26%, rgba(63, 140, 63, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(63, 140, 63, 0.75) 1%, #3f8c3f 26%, rgba(63, 140, 63, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(63, 140, 63, 0.75) 1%, #3f8c3f 26%, rgba(63, 140, 63, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf3f8c3f', endColorstr='#003f8c3f',GradientType=1 ); }
+
+  .aircraft_content_wrap {
+    max-width: 1920px;
+    margin: 0 auto; }
+
+  .aircraft_section_heading .aircraft_content_wrap {
+    height: 100%; } }
+#aircraft_wrapper {
+  background-color: #EBEBEB;
+  position: relative;
+  color: #666;
+  padding: 20px 10px 1px; }
+
+.aircraft_specifications_1 {
+  display: none; }
+
+.aircraft_specifications_2 {
+  display: block; }
+
+#aircraft_specifications_2 .widget-title {
+  text-align: center; }
+
+#aircraft_history {
+  display: flex;
+  flex-wrap: wrap; }
+
+.detail_section_title {
+  width: 100%;
+  margin: 0;
+  padding: 3px 0px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+  background-color: #5E5E5E;
+  color: #EBEBEB;
+  font-family: "Jura", sans-serif; }
+
+.spec_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #FFFFFF;
+  position: relative; }
+
+.spec_item:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.spec_title {
+  color: #EBEBEB;
+  margin-left: 8px;
+  font-family: "Jura", sans-serif; }
+
+.spec_value {
+  margin: 0;
+  padding: 0;
+  width: 42%;
+  color: #2D2D2D;
+  font-family: "Metrophobic", sans-serif; }
+
+.detail_item {
+  margin-bottom: 15px;
+  background-color: white; }
+
+.detail_title {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding-left: 15px;
+  background-color: #868686;
+  color: white;
+  border-top: 2px solid #F3F3F3;
+  font-family: "Jura", sans-serif;
+  font-size: 1.1rem;
+  line-height: 2rem; }
+
+.detail_value {
+  margin: 0;
+  padding: 15px 20px;
+  background-color: white;
+  color: #2D2D2D;
+  font-family: "Metrophobic", sans-serif; }
+
+#inventory_contact {
+  background-color: white; }
+
+#inventory_contact .widget_content_area {
+  padding: 25px 30px;
+  font-family: "Metrophobic", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.1rem; }
+
+@media screen and (min-width: 375px) {
+  .specification_overlay {
+    width: 50%; }
+
+  .spec_value {
+    width: 47%; } }
+@media screen and (min-width: 960px) {
+  .aircraft_specifications_1 {
+    display: block; }
+
+  .aircraft_specifications_2 {
+    display: none; }
+
+  #aircraft_info,
+  #details {
+    background-color: #151515; }
+
+  #aircraft_info .content_wrapper {
+    width: calc(50% - 20px);
+    margin-left: 20px;
+    border-bottom: 2px solid #5E5E5E; }
+
+  .spec_item,
+  .detail_item {
+    font-size: 1rem; }
+
+  .specification_overlay {
+    min-width: 240px;
+    max-width: 240px; }
+
+  .spec_value {
+    width: calc(100% - 250px); }
+
+  #details .aircraft_section_heading,
+  #details .aircraft_section_line {
+    display: none; }
+
+  #details .content_wrapper {
+    padding: 0;
+    margin: 0 20px; }
+
+  .detail_item {
+    display: flex;
+    margin-bottom: 0;
+    border-top: 2px solid #5E5E5E; }
+
+  #main_detail_section .detail_item:first-of-type {
+    border-top: 2px solid #F3F3F3; }
+
+  .detail_title {
+    flex: none;
+    width: 150px;
+    margin-top: -2px;
+    padding-left: 10px;
+    border-top: 2px solid #EBEBEB;
+    line-height: 120px;
+    font-size: 1rem; }
+
+  .detail_value {
+    margin: 0;
+    padding: 50px 20px; }
+
+  .detail_with_slider {
+    overflow: hidden; } }
+@media screen and (min-width: 1300px) {
+  .detail_item {
+    font-size: 1.1rem; }
+
+  .detail_title {
+    width: 200px;
+    font-size: 1.2rem; } }
+#project_wrapper #gallery {
+  margin-bottom: 25px; }
+
+#project_wrapper .detail_item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  border: none;
+  background-color: white; }
+
+#project_wrapper .detail_item:last-of-type {
+  margin-bottom: 50px; }
+
+#project_wrapper .detail_title {
+  width: 100%;
+  padding: 3px 0 3px 15px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center; }
+
+#project_wrapper .detail_value {
+  padding: 30px 20px;
+  background-color: white;
+  font-size: 1rem; }
+
+.project_post .article_title {
+  font-size: 1.5rem; }
+
+#project_sidebar_wrapper .spec_item:first-of-type .spec_value {
+  border-top: 2px solid white; }
+
+#project_sidebar_wrapper .spec_item {
+  background-color: white; }
+
+#project_sidebar_wrapper .spec_title {
+  font-family: "Jura", sans-serif;
+  margin-left: 0;
+  padding: 5px 0 5px 8px;
+  width: 50%;
+  background-color: #868686;
+  color: white;
+  font-size: 1.1rem;
+  border-top: 2px solid #EBEBEB; }
+
+#project_sidebar_wrapper .spec_value {
+  width: 50%;
+  border-top: 2px solid #868686;
+  padding-top: 4px;
+  padding-left: 15px;
+  font-size: 1.1rem; }
+
+#project_sidebar_wrapper .detail_item {
+  flex-wrap: wrap; }
+
+#project_sidebar_wrapper .detail_title {
+  flex: none;
+  width: 100%;
+  padding-left: 15px;
+  margin-top: -2px;
+  line-height: 2rem;
+  background-color: #868686;
+  border-top: 2px solid #EBEBEB;
+  font-size: 1.1rem; }
+
+#project_sidebar_wrapper .detail_value {
+  padding: 15px 20px;
+  width: 100%;
+  font-size: 1rem;
+  background-color: white; }
+
+#inventory_contact ul {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  padding-left: 15px; }
+
+#inventory_contact a {
+  color: #3F8C3F;
+  font-size: 1rem;
+  transition: 0.4s; }
+
+#inventory_contact a:hover,
+#inventory_contact a:focus {
+  color: #5E5E5E;
+  transition: 0.4s; }
+
+#inventory_contact a {
+  text-decoration: none;
+  font-size: 1rem; }
+
+#project_sidebar_wrapper .wpcf7-submit:hover,
+#project_sidebar_wrapper .wpcf7-submit:focus {
+  border: 2px solid #3F8C3F !important; }
+
+#project_header_info_box #project_info_box_span {
+  bottom: 12.5em; }
+
+.project_post {
+  margin: 10px 0;
+  border: none;
+  background-color: white; }
+
+.project_post_title {
+  position: relative;
+  margin-top: 0;
+  border-top: none;
+  background-color: #5E5E5E;
+  color: #EBEBEB;
+  line-height: 4rem; }
+
+.project_post_title p {
+  font-size: 1.5em;
+  margin: 0; }
+
+.project_post_text {
+  position: relative;
+  padding-top: 135px;
+  background-color: white; }
+
+.project_post_text h3 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 10px 0 0 0;
+  font-family: Jura;
+  font-size: 2em;
+  font-weight: 900;
+  background-color: white;
+  color: #3F8C3F; }
+
+@media screen and (max-height: 500px) {
+  #project_header_info_box #project_info_box_span {
+    bottom: 5.5em; }
+
+  #project_header_info_box #aircraft_sorting a {
+    max-width: 165px; } }
+@media screen and (max-height: 500px) and (min-width: 750px) {
+  #aircraft_sorting {
+    bottom: 2em; } }
+@media screen and (min-width: 750px) {
+  #project_header_info_box #aircraft_sorting {
+    max-width: 700px; }
+
+  #project_header_info_box #aircraft_sorting a {
+    max-width: 200px; } }
+@media screen and (min-width: 900px) {
+  #project_header_info_box #aircraft_sorting a {
+    max-width: 260px; }
+
+  #project_header_info_box #project_info_box_span {
+    bottom: 31vh; }
+
+  #project_gallery_title {
+    font-size: 3.4rem; }
+
+  .project_post {
+    min-height: 550px;
+    background-color: #EBEBEB; }
+
+  .project_post_title {
+    background-color: #5E5E5E;
+    color: #868686;
+    line-height: 1em; }
+
+  .project_post_title p {
+    position: absolute;
+    top: 255px;
+    left: -160px;
+    min-width: 550px;
+    margin: 0;
+    transform: rotate(-90deg);
+    font-size: 3em; }
+
+  #project_section .project_post_text {
+    background-color: #EBEBEB;
+    padding-top: 150px; }
+
+  .project_post_text h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 135px;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 2em;
+    font-weight: 900;
+    line-height: 135px; } }
+@media screen and (min-width: 960px) {
+  #project_wrapper .detail_value {
+    font-size: 1.1rem; }
+
+  #project_sidebar_wrapper .spec_item {
+    background-color: white; }
+
+  #project_sidebar_wrapper .spec_title {
+    font-family: "Jura", sans-serif;
+    margin-left: 0;
+    padding: 5px 0 5px 8px;
+    width: 160px;
+    background-color: #868686;
+    font-size: 1.1rem;
+    border-top: 2px solid #EBEBEB; }
+
+  #project_sidebar_wrapper .spec_value {
+    width: calc(100% - 160px);
+    border-top: 2px solid #868686;
+    padding-left: 15px;
+    font-size: 1.1rem; }
+
+  #project_sidebar_wrapper .detail_item {
+    flex-wrap: wrap; }
+
+  #project_sidebar_wrapper .detail_title {
+    flex: none;
+    width: 100%;
+    padding-left: 15px;
+    margin-top: -2px;
+    line-height: 2rem;
+    background-color: #868686;
+    border-top: 2px solid #EBEBEB;
+    font-size: 1.1rem; }
+
+  #project_sidebar_wrapper .detail_value {
+    padding: 15px 20px;
+    width: 100%;
+    font-size: 1.1rem;
+    background-color: white; } }
+.content-area {
+  float: left;
+  margin: 0 -25% 0 0;
+  width: 100%; }
+
+.site-main {
+  margin: 0 0 0 0; }
+
+.site-footer {
+  clear: both;
+  width: 100%; }
+
+.widget-area section {
+  background-color: white; }
+
+.widget {
+  background-color: white; }
+
+.widget-title {
+  margin: 0;
+  padding: 3px 0 3px 15px;
+  font-family: "Jura", sans-serif;
+  background-color: #5E5E5E;
+  color: #EBEBEB; }
+
+.widget-area a {
+  text-decoration: none;
+  color: #3F8C3F;
+  font-family: "Jura", sans-serif;
+  font-weight: 600;
+  transition: 0.2s; }
+
+.widget-area a:hover,
+.widget-area a:focus {
+  color: #2D2D2D;
+  transition: 0.2s; }
+
+.widget_search {
+  width: 100%; }
+
+#search-2 .search-form,
+#search-3 .search-form {
+  position: relative;
+  padding: 25px 30px; }
+
+#search-2 .search-field,
+#search-3 .search-field {
+  width: 100%;
+  border-radius: 0px;
+  border: 2px solid #CECECE;
+  font-family: "Metrophobic", sans-serif;
+  color: #404040;
+  transition: 0.2s; }
+
+#search-2 .search-field:active,
+#search-2 .search-field:focus,
+#search-3 .search-field:active,
+#search-3 .search-field:focus {
+  border: 2px solid #3F8C3F;
+  transition: 0.2s; }
+
+#search-2 .search-submit,
+#search-3 .search-submit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 31px;
+  margin: auto;
+  height: 2.5em;
+  font-family: fontawesome;
+  font-size: 1em;
+  color: #3F8C3F;
+  background-color: transparent;
+  border: none;
+  transition: 0.2s; }
+
+#search-2 .search-submit:hover,
+#search-2 .search-submit:active,
+#search-2 .search-submit:focus,
+#search-3 .search-submit:hover,
+#search-3 .search-submit:active,
+#search-3 .search-submit:focus {
+  color: #2D2D2D; }
+
+.recent-posts-widget-with-thumbnails {
+  width: 100%; }
+
+#rpwwt-recent-posts-widget-with-thumbnails-3 img {
+  border-top: 1px solid #EBEBEB;
+  background-color: #868686;
+  padding: 0 0 0 10px;
+  margin: 0;
+  height: 100px !important;
+  width: 110px !important;
+  object-fit: cover;
+  object-position: center; }
+
+.rpwwt-widget ul li {
+  position: relative;
+  margin-bottom: 0 !important; }
+
+.rpwwt-widget li a span {
+  position: absolute;
+  top: 0;
+  left: 110px;
+  width: calc(100% - 110px);
+  padding: 10px 0 0 8px;
+  border-top: 1px solid #868686;
+  font-size: 0.8rem;
+  line-height: 0.9rem; }
+
+.rpwwt-widget li:first-of-type a span {
+  border-top: none; }
+
+.rpwwt-post-excerpt {
+  position: absolute;
+  margin-left: 119px;
+  bottom: 0px;
+  font-size: 0.75rem;
+  line-height: 0.9rem; }
+
+#categories-2 ul,
+#archives-2 ul {
+  list-style-type: none;
+  padding: 25px 30px;
+  margin: 0;
+  font-family: "Metrophobic", sans-serif;
+  color: #868686; }
+
+.widget_archive,
+.widget_categories {
+  width: 100%; }
+
+@media screen and (min-width: 500px) {
+  .widget_archive,
+  .widget_categories {
+    width: calc(50% - 12.5px); } }
+@media screen and (min-width: 960px) {
+  .widget_archive,
+  .widget_categories {
+    width: 100%; } }
+@media screen and (min-width: 1100px) {
+  .rpwwt-widget li a span {
+    width: calc(100% - 100px);
+    padding: 10px 0 0 15px;
+    font-size: 0.8rem;
+    line-height: 1rem; }
+
+  .rpwwt-post-excerpt {
+    bottom: 10px;
+    margin-left: 125px;
+    font-size: 0.8rem;
+    line-height: 1rem; } }
+@media screen and (min-width: 1300px) {
+  #rpwwt-recent-posts-widget-with-thumbnails-3 img {
+    height: 140px !important;
+    width: 145px !important; }
+
+  .rpwwt-widget li a span {
+    left: 145px;
+    width: calc(100% - 145px);
+    padding: 10px 0 0 15px;
+    font-size: 1rem; }
+
+  .rpwwt-post-excerpt {
+    margin-left: 160px;
+    bottom: 20px;
+    font-size: 1rem; } }
+#news_page_header {
+//   background-image: url("images/news_medium.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#single_news_page_header_nothumb {
+//   background-image: url("images/news_medium.jpg"); 
+}
+
+.news_post_header {
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  transform: scale(1.2); }
+
+#news_page_main_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 10px;
+  background-color: #F3F3F3; }
+
+.article_listings_wrapper {
+  width: 100%; }
+
+.article_listings_wrapper article {
+  display: flex;
+  position: relative;
+  margin-bottom: 50px;
+  background-color: white; }
+
+.article_side {
+  position: relative;
+  width: 125px;
+  flex-shrink: 0;
+  font-family: "Orbitron", sans-serif;
+  color: #868686;
+  line-height: 1em;
+  background-color: #5E5E5E;
+  overflow: hidden;
+  display: none; }
+
+.article_side p {
+  position: absolute;
+  top: 360px;
+  left: -208px;
+  min-width: 540px;
+  margin: 0;
+  transform: rotate(-90deg);
+  font-size: 3em; }
+
+#article_side_no_thumb {
+  top: 25px; }
+
+.article_excerpt_title {
+  width: 100%;
+  padding: 30px 10px;
+  background-color: white; }
+
+.article_excerpt_title .entry-title {
+  margin: 0;
+  line-height: 1.5rem; }
+
+.article_excerpt_title .entry-title a {
+  font-size: 32px;
+  line-height: 1.5rem;
+  font-weight: 900;
+  color: #3F8C3F;
+  font-family: "Jura", sans-serif;
+  text-decoration: none;
+  transition: 0.2s; }
+
+.article_excerpt_title .entry-title a:hover,
+.article_excerpt_title .entry-title a:focus {
+  color: #2D2D2D;
+  transition: 0.2s; }
+
+.news_article_content {
+  padding: 0px 20px 25px;
+  font-family: "Metrophobic", sans-serif;
+  font-size: 1rem;
+  background-color: white; }
+
+.article_content figure {
+  width: auto !important; }
+
+.article_excerpt {
+  font-family: "Metrophobic", sans-serif;
+  font-size: 1rem; }
+
+.article_excerpt p {
+  margin-top: 0; }
+
+.article_footer {
+  display: block;
+  border-top: 2px solid #F3F3F3;
+  min-height: 75px;
+  padding: 25px 10px;
+  font-family: "Metrophobic", sans-serif;
+  color: #868686; }
+
+.article_meta_list {
+  min-width: 190px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.article_meta_list li,
+.article_category_list li {
+  display: inline-block; }
+
+.article_meta_list li {
+  margin-right: 20px; }
+
+.article_category_list li {
+  margin-right: 5px; }
+
+.post-categories {
+  display: inline-block; }
+
+.post-categories a {
+  text-decoration: none;
+  padding: 3px;
+  color: #3F8C3F;
+  transition: 0.2s; }
+
+.post-categories a:hover,
+.post-categories a:focus {
+  background-color: white;
+  color: #2D2D2D;
+  transition: 0.2s; }
+
+.article_read_more {
+  margin: 0 auto;
+  margin-top: 25px;
+  flex-shrink: 0;
+  text-align: center;
+  max-width: 175px; }
+
+.article_read_more a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: "Metrophobic", sans-serif;
+  border: 2px solid #5E5E5E;
+  background-color: #5E5E5E;
+  color: #E1E1E1;
+  transition: 0.2s; }
+
+.article_read_more a:hover,
+.article_read_more a:focus {
+  color: #3F8C3F;
+  background-color: white;
+  border: 2px solid #3F8C3F;
+  transition: 0.2s; }
+
+.sidebar_wrapper {
+  width: 100%; }
+
+.sidebar_wrapper aside {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+@media screen and (min-width: 400px) {
+  .article_footer {
+    display: flex; }
+
+  .article_read_more {
+    max-width: auto;
+    margin-right: 0;
+    margin-top: 0; } }
+@media screen and (min-width: 500px) {
+  #news_page_header {
+    // background-image: url("images/news_medium.jpg"); 
+}
+
+  .article_side {
+    display: block; }
+
+  .article_header,
+  .article_excerpt_title,
+  .news_article_content,
+  .article_footer {
+    padding-left: 25px;
+    padding-right: 25px; } }
+@media screen and (min-width: 600px) {
+  .article_header,
+  .article_excerpt_title,
+  .news_article_content,
+  .article_footer {
+    padding-left: 50px;
+    padding-right: 50px; } }
+@media screen and (min-width: 960px) {
+  #news_page_header {
+    // background-image: url("images/news_large.jpg"); 
+}
+
+  #news_page_main_wrapper {
+    flex-wrap: nowrap;
+    padding: 40px 20px; }
+
+  .article_listings_wrapper {
+    width: 75%;
+    margin-right: 25px; }
+
+  .sidebar_wrapper {
+    width: 25%;
+    min-width: 260px; }
+
+  .sidebar_wrapper aside {
+    display: block; }
+
+  .news_article_content,
+  .article_excerpt {
+    font-size: 1.1rem; } }
+@media screen and (min-width: 1100px) {
+  .article_side {
+    width: 150px; }
+
+  .article_side p {
+    left: -197px; }
+
+  .sidebar_wrapper {
+    min-width: 300px; } }
+@media screen and (min-width: 1300px) {
+  #news_page_main_wrapper {
+    padding: 40px; }
+
+  .article_side {
+    width: 200px; }
+
+  .article_side p {
+    left: -165px; }
+
+  .sidebar_wrapper {
+    width: 25%;
+    min-width: 375px;
+    margin-left: 25px; } }
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(153, 153, 153, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5); }
+
+.nav_wrap {
+  max-width: 1600px;
+  margin: 0 auto; }
+
+.main-navigation {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 5px;
+  line-height: 1em; }
+
+.nav_branding {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  line-height: 0.8em;
+  padding-top: 5px; }
+
+.nav_branding span {
+  color: white; }
+
+.nav_branding span:nth-of-type(2) {
+  font-size: 0.85em; }
+
+.main-navigation li {
+  text-align: center;
+  height: 100%;
+  transition: 0.2s;
+  margin: 0 2px;
+  padding: 0 3px;
+  min-width: 60px; }
+
+.main-navigation li a {
+  color: white;
+  font-family: "Jura", sans-serif;
+  height: 100%;
+  padding: 3px 2px;
+  font-size: 0.9em; }
+
+.main-navigation li:hover a {
+  color: #3F8C3F;
+  transition: 0.2s; }
+
+.main-navigation li:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.2s; }
+
+.main-navigation svg {
+  transition: 0.2s; }
+
+.main-navigation li:hover svg,
+.main-navigation li:active svg {
+  color: #3F8C3F;
+  padding-top: 0px;
+  transition: 0.2s;
+  transform: rotate(360deg); }
+
+.main-navigation li:hover #wrench,
+.main-navigation li:active #wrench {
+  transform: rotate(270deg) scaleX(-1); }
+
+.main-navigation li:hover #fighterjet,
+.main-navigation li:active #fighterjet {
+  transform: rotate(270deg); }
+
+@media screen and (max-width: 850px) {
+  .main-navigation li {
+    margin: 0;
+    padding: 0; } }
+@media screen and (max-width: 775px) {
+  .menu-toggle {
+    display: block;
+    height: 38px;
+    padding: 0 12px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    transition: 0.2s; }
+
+  .menu-toggle span {
+    font-family: fontawesome;
+    font-size: 2em; }
+
+  .menu-toggle:hover,
+  .menu-toggle:active {
+    color: #3F8C3F;
+    background-color: rgba(255, 255, 255, 0.9); }
+
+  .button-toggled {
+    color: #3F8C3F;
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: 0.2s; }
+
+  .menu-main-navigation-container {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+    display: none; }
+
+  .main-navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border: 2px solid transparent;
+    height: calc(100vh - 38px);
+    overflow-y: scroll;
+    overflow-x: hidden; }
+
+  .main-navigation li {
+    width: 33.3333%;
+    height: 33vw;
+    border: 2px solid rgba(153, 153, 153, 0.6);
+    animation-name: menu-entry;
+    animation-duration: 0.2s; }
+
+  @keyframes menu-entry {
+    from {
+      transform: scale(0); }
+    to {
+      transform: scale(1); } }
+  .main-navigation li a {
+    width: 100%;
+    font-size: 1em;
+    width: 100%;
+    line-height: 30px;
+    padding-top: 25%;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #3F8C3F; }
+
+  .main-navigation li a svg {
+    font-size: 2.5em; }
+
+  .mobile-menu-open {
+    display: block; }
+
+  .mobile-menu-closed {
+    display: none; }
+
+  .menu-item a:focus {
+    background-color: white;
+    color: black; }
+
+  .main-navigation li:hover {
+    background-color: transparent;
+    transition: 0.2s; } }
+@media screen and (max-width: 775px) and (max-height: 500px) {
+  .main-navigation li {
+    width: 25%;
+    height: 25vw; } }
+.site-footer {
+  text-align: center;
+  padding-top: 22px;
+  color: white;
+  background-color: #444444; }
+
+.footer_wrapper {
+  max-width: 1400px;
+  margin: 0 auto; }
+
+.footer_heading {
+  font-family: "Jura", sans-serif;
+  font-size: 1.1em;
+  color: #E1E1E1;
+  margin: 0.6em 0; }
+
+.site-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 1; }
+
+.site-footer a {
+  color: #8C8C8C;
+  text-decoration: none;
+  font-family: "Metrophobic", sans-serif;
+  font-size: 0.8em;
+  font-weight: lighter;
+  transition: 0.2s; }
+
+.site-footer a:active,
+.site-footer a:hover {
+  color: white;
+  transition: 0.2s; }
+
+.footer_branding {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.5em; }
+
+.footer_branding p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  line-height: 1.5; }
+
+.footer_branding p:first-of-type {
+  font-size: 1em; }
+
+.footer_branding p:nth-of-type(2) {
+  font-size: 0.8em;
+  margin-top: -12px; }
+
+.footer_contact {
+  margin: 20px 0 20px 0;
+  padding: 0 20px;
+  text-align: left;
+  max-width: 320px; }
+
+.footer_contact h2 {
+  font-family: "Jura", sans-serif;
+  font-size: 1.1em;
+  color: #E1E1E1;
+  margin: 0.6em 0; }
+
+.footer_contact p {
+  font-family: "Metrophobic", sans-serif;
+  font-size: 0.7em;
+  font-weight: lighter;
+  color: #8C8C8C;
+  margin: 0.6em 0;
+  padding-right: 25px; }
+
+.footer_contact ul {
+  margin-top: 10px; }
+
+.footer_contact i {
+  font-size: 1.2em;
+  margin-right: 3px; }
+
+.footer_contact li:first-of-type i {
+  margin-right: 7px; }
+
+.footer_contact a {
+  line-height: 1.5em; }
+
+.footer_social {
+  margin: 0 auto;
+  padding-bottom: 20px; }
+
+.footer_social ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  padding: 10px 20px 0 20px;
+  max-width: 300px;
+  margin: 0 auto; }
+
+.footer_copyright p {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  color: #8C8C8C; }
+
+.footer_copyright {
+  font-family: "Metrophobic", sans-serif;
+  font-size: 0.8em;
+  background-color: #2D2D2D;
+  height: 40px; }
+
+.footer_nav {
+  text-align: left;
+  margin-bottom: 15px;
+  padding: 0 20px; }
+
+@supports (grid-area: auto) {
+  @media screen and (min-width: 680px) {
+    .footer_wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; }
+
+    .footer_branding {
+      grid-column: 1/4;
+      padding-bottom: 20px; }
+
+    .footer_line_div {
+      grid-column: 1/4; }
+
+    .footer_line {
+      display: block;
+      border: none;
+      color: white;
+      height: 2px;
+      background: black;
+      background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0))); }
+
+    .footer_contact {
+      margin: 10px 0 20px 0;
+      padding-left: 20px;
+      padding-right: 0; }
+
+    .footer_nav {
+      text-align: right;
+      margin: 10px 0 20px 0;
+      grid-column: 3/4; }
+
+    .footer_nav ul {
+      margin: 0.6em 0; }
+
+    .footer_social {
+      margin: 10px 0 20px 0;
+      grid-column: 2/3;
+      grid-row: 3/4;
+      width: 100%; }
+
+    .footer_copyright {
+      margin-top: 15px; } } }
+
+/*# sourceMappingURL=style.css.map */
